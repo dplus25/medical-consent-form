@@ -30,7 +30,7 @@
     </div>
 
     <!-- Form -->
-    <form id="consentForm" class="space-y-4">
+    <form id="consentForm" class="space-y-4" target="hidden_iframe">
       <div>
         <label id="nameLabel" for="name" class="block text-sm font-medium">Full Name of Patient</label>
         <input type="text" id="name" name="name" required class="w-full border p-2 rounded">
@@ -150,9 +150,15 @@
       <!-- Hidden Timestamp -->
       <input type="hidden" id="timestamp" name="timestamp">
 
+      <!-- Hidden Redirect URL -->
+      <input type="hidden" id="redirectUrl" name="redirectUrl" value="https://dplus25.github.io/medical-consent-form/success.html">
+
       <!-- Submit -->
       <button type="submit" id="submitButton" class="w-full bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
     </form>
+
+    <!-- Hidden Iframe for Form Submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
   </div>
 
   <script>
@@ -360,7 +366,7 @@
           <p><strong>5. تجزیه و تحلیل راه رفتن</strong></p>
           <p><strong>هدف:</strong> ارزیابی الگوهای راه رفتن و بیومکانیک حرکت برای برنامه‌ریزی درمان.</p>
           <p><strong>روش:</strong> مشاهده و تجزیه و تحلیل راه رفتن با استفاده از مشاهده بصری، ویدئو یا دستگاه‌های حسگر.</p>
-          <p><strong>خطرات:</strong> حداقل؛ ممکن است شامل ناراحتی خفیف در طول تست‌های راه رفتن باشد.</p>
+          <p><strong>خطرات:</strong> حداقل؛ ممکن است شامل ناراحتی خفیف در طول تست‌های راه رفتن باشد。</p>
           <p><strong>فواید:</strong> داده‌هایی برای توسعه برنامه‌های درمانی هدفمند فراهم می‌کند؛ نتایج به درمان بعدی بستگی دارد。</p>
           <p><strong>6. درمان با دستگاه جاذبه صفر</strong></p>
           <p><strong>هدف:</strong> تسهیل تمرینات با تحمل وزن جزئی و آموزش راه رفتن برای توان‌بخشی.</p>
@@ -389,7 +395,7 @@
           <p><strong>فواید:</strong> ممکن است درد را کاهش دهد، عملکرد عضلانی را بهبود بخشد و به بهبود کمک کند؛ نتایج متفاوت است.</p>
           <p><strong>11. فیزیوتراپی کودکان (در صورت وجود)</strong></p>
           <p><strong>هدف:</strong> درمان تأخیرات رشدی، ناتوانی‌ها، آسیب‌ها یا شرایطی که بر سلامت کلی و توانایی‌های عملکردی کودک تأثیر می‌گذارد.</p>
-          <p><strong>روش:</strong> جلسات درمانی شامل فعالیت‌ها، تمرینات و مداخلات طراحی‌شده برای رفع نیازهای کودک در محیطی امن و حمایتی، ممکن است شامل فیزیوتراپی (برای بهبود مهارت‌های حرکتی درشت)، کاردرمانی (برای تقویت مهارت‌های حرکتی ظریف) یا گفتاردرمانی (برای رفع تأخیرات ارتباطی) باشد.</p>
+          <p><strong>روش:</strong> جلسات درمانی شامل فعالیت‌ها، تمرینات و مداخلات طراحی‌شده برای رفع نیازهای کودک در محیطی امن و حمایتی، ممکن است شامل فیزیوتراپی (برای بهبود مهارت‌های حرکتی درشت)، کاردرمانی (برای تقویت مهارت‌های حرکتی ظریف) یا گفتاردرمانی (برای رفع تأخیرات ارتباطی) باشد。</p>
           <p><strong>خطرات:</strong> ناراحتی یا ناامیدی موقت در طول جلسات؛ به ندرت، واکنش‌های آلرژیک به تجهیزات یا مواد.</p>
           <p><strong>فواید:</strong> بهبود مهارت‌های حرکتی، هماهنگی، توانایی‌های روزانه یا عملکردهای ارتباطی؛ نتایج بسته به کودک متفاوت است.</p>
           <p><strong>12. درمان توسط متخصص جنس مخالف</strong></p>
@@ -562,6 +568,8 @@
     updateDateTime();
 
     // Form Submission
+    document.getElementById('consentForm').action = 'https://script.google.com/macros/s/AKfycbzdGzj9aOE_h3mbLcSznCw9YNjNHvLaHrSkwMb_LHeTJFyQVvUZfxsEREzqfErZNhLO/exec';
+    document.getElementById('consentForm').method = 'POST';
     document.getElementById('consentForm').addEventListener('submit', (e) => {
       e.preventDefault();
       console.log("Submit button clicked!");
@@ -571,36 +579,5 @@
       document.getElementById('witnessSignature').value = canvases.witness.toDataURL('image/png');
       document.getElementById('therapistSignature').value = canvases.therapist.toDataURL('image/png');
 
-      // Create a hidden form to submit data
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'https://script.google.com/macros/s/AKfycbzdGzj9aOE_h3mbLcSznCw9YNjNHvLaHrSkwMb_LHeTJFyQVvUZfxsEREzqfErZNhLO/exec';
-
       const data = {
-        name: document.getElementById('name').value,
-        fileNumber: document.getElementById('fileNumber').value,
-        consentGiven: document.getElementById('consentCheckbox').checked,
-        additionalNotes: document.getElementById('additionalNotes').value,
-        signatureDateTime: document.getElementById('signatureDateTime').value,
-        patientSignature: document.getElementById('patientSignature').value,
-        witnessSignature: document.getElementById('witnessSignature').value,
-        therapistSignature: document.getElementById('therapistSignature').value,
-        timestamp: document.getElementById('timestamp').value
-      };
-
-      console.log("Data prepared to send:", data);
-
-      // Add data to the hidden form
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = 'data';
-      input.value = JSON.stringify(data);
-      form.appendChild(input);
-
-      // Append the form to the body and submit
-      document.body.appendChild(form);
-      form.submit();
-    });
-  </script>
-</body>
-</html>
+        name:
