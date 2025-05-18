@@ -33,11 +33,11 @@
     <form id="consentForm" class="space-y-4">
       <div>
         <label id="nameLabel" for="name" class="block text-sm font-medium">Full Name of Patient</label>
-        <input type="text" id="name" required class="w-full border p-2 rounded">
+        <input type="text" id="name" name="name" required class="w-full border p-2 rounded">
       </div>
       <div>
         <label id="fileNumberLabel" for="fileNumber" class="block text-sm font-medium">Medical File Number</label>
-        <input type="text" id="fileNumber" required class="w-full border p-2 rounded">
+        <input type="text" id="fileNumber" name="fileNumber" required class="w-full border p-2 rounded">
       </div>
 
       <!-- Approved Treatments -->
@@ -110,13 +110,13 @@
       <!-- Additional Notes -->
       <div>
         <label id="notesLabel" for="additionalNotes" class="block text-sm font-medium">Additional Notes and Reservations (Optional)</label>
-        <textarea id="additionalNotes" class="w-full border p-2 rounded" rows="4" placeholder="Document any objections to specific devices or procedures here..."></textarea>
+        <textarea id="additionalNotes" name="additionalNotes" class="w-full border p-2 rounded" rows="4" placeholder="Document any objections to specific devices or procedures here..."></textarea>
       </div>
 
       <!-- Consent Checkbox -->
       <div>
         <label id="consentCheckboxLabel" class="block text-sm font-medium">
-          <input type="checkbox" id="consentCheckbox" required class="mr-2">
+          <input type="checkbox" id="consentCheckbox" name="consentGiven" required class="mr-2">
           By signing below and checking this box, I confirm that I have reviewed the information related to the selected treatments, including their purposes, procedures, potential risks, and expected benefits, and that I fully understand them. I acknowledge my voluntary consent to undergo the specified treatments performed by a licensed physical therapist or qualified healthcare provider, except as noted in the additional notes section. Discussions regarding alternative options available for my condition with the doctor or specialist, along with sufficient opportunity to inquire and seek clarifications, have been provided. I recognize my right to ask any additional questions about the treatments at any time. I commit to notifying the physical therapist of any changes in my health condition or any unexpected or unusual reactions before, during, or after the treatments. I also understand that my personal and medical information will be kept strictly confidential in accordance with applicable laws and regulations.
         </label>
       </div>
@@ -125,24 +125,30 @@
       <div>
         <label id="patientSignatureLabel" class="block text-sm font-medium">Patient Signature</label>
         <canvas id="patientSignatureCanvas" class="border w-full h-32"></canvas>
+        <input type="hidden" id="patientSignature" name="patientSignature">
         <button type="button" id="clearPatientSignature" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear Patient Signature</button>
       </div>
       <div>
         <label id="witnessSignatureLabel" class="block text-sm font-medium">Witness Signature</label>
         <canvas id="witnessSignatureCanvas" class="border w-full h-32"></canvas>
+        <input type="hidden" id="witnessSignature" name="witnessSignature">
         <button type="button" id="clearWitnessSignature" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear Witness Signature</button>
       </div>
       <div>
         <label id="therapistSignatureLabel" class="block text-sm font-medium">Therapist Signature</label>
         <canvas id="therapistSignatureCanvas" class="border w-full h-32"></canvas>
+        <input type="hidden" id="therapistSignature" name="therapistSignature">
         <button type="button" id="clearTherapistSignature" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear Therapist Signature</button>
       </div>
 
       <!-- Date and Time -->
       <div>
         <label id="dateTimeLabel" class="block text-sm font-medium">Signature Date and Time</label>
-        <input type="text" id="signatureDateTime" readonly class="w-full border p-2 rounded" value="">
+        <input type="text" id="signatureDateTime" name="signatureDateTime" readonly class="w-full border p-2 rounded" value="">
       </div>
+
+      <!-- Hidden Timestamp -->
+      <input type="hidden" id="timestamp" name="timestamp">
 
       <!-- Submit -->
       <button type="submit" id="submitButton" class="w-full bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
@@ -355,7 +361,7 @@
           <p><strong>هدف:</strong> ارزیابی الگوهای راه رفتن و بیومکانیک حرکت برای برنامه‌ریزی درمان.</p>
           <p><strong>روش:</strong> مشاهده و تجزیه و تحلیل راه رفتن با استفاده از مشاهده بصری، ویدئو یا دستگاه‌های حسگر.</p>
           <p><strong>خطرات:</strong> حداقل؛ ممکن است شامل ناراحتی خفیف در طول تست‌های راه رفتن باشد.</p>
-          <p><strong>فواید:</strong> داده‌هایی برای توسعه برنامه‌های درمانی هدفمند فراهم می‌کند؛ نتایج به درمان بعدی بستگی دارد.</p>
+          <p><strong>فواید:</strong> داده‌هایی برای توسعه برنامه‌های درمانی هدفمند فراهم می‌کند؛ نتایج به درمان بعدی بستگی دارد。</p>
           <p><strong>6. درمان با دستگاه جاذبه صفر</strong></p>
           <p><strong>هدف:</strong> تسهیل تمرینات با تحمل وزن جزئی و آموزش راه رفتن برای توان‌بخشی.</p>
           <p><strong>روش:</strong> استفاده از دستگاه برای کاهش وزن بدن در طول تمرین، امکان حرکت کنترل‌شده را فراهم می‌کند.</p>
@@ -385,7 +391,7 @@
           <p><strong>هدف:</strong> درمان تأخیرات رشدی، ناتوانی‌ها، آسیب‌ها یا شرایطی که بر سلامت کلی و توانایی‌های عملکردی کودک تأثیر می‌گذارد.</p>
           <p><strong>روش:</strong> جلسات درمانی شامل فعالیت‌ها، تمرینات و مداخلات طراحی‌شده برای رفع نیازهای کودک در محیطی امن و حمایتی، ممکن است شامل فیزیوتراپی (برای بهبود مهارت‌های حرکتی درشت)، کاردرمانی (برای تقویت مهارت‌های حرکتی ظریف) یا گفتاردرمانی (برای رفع تأخیرات ارتباطی) باشد.</p>
           <p><strong>خطرات:</strong> ناراحتی یا ناامیدی موقت در طول جلسات؛ به ندرت، واکنش‌های آلرژیک به تجهیزات یا مواد.</p>
-          <p><strong>فواید:</strong> بهبود مهارت‌های حرکتی، هماهنگی، توانایی‌های روزانه یا عملکردهای ارتباطی؛ نتایج بسته به کودک متفاوت است。</p>
+          <p><strong>فواید:</strong> بهبود مهارت‌های حرکتی، هماهنگی، توانایی‌های روزانه یا عملکردهای ارتباطی؛ نتایج بسته به کودک متفاوت است.</p>
           <p><strong>12. درمان توسط متخصص جنس مخالف</strong></p>
           <p><strong>هدف:</strong> ارائه خدمات فیزیوتراپی توسط متخصص جنس مخالف به دلیل تخصص آنها، تضمین تداوم مراقبت به بهترین شکل.</p>
           <p><strong>روش:</strong> انجام درمان‌های انتخاب‌شده توسط متخصص دارای مجوز از جنس مخالف، با هماهنگی و رضایت قبلی، با رعایت استانداردهای حرفه‌ای و اخلاقی.</p>
@@ -404,7 +410,7 @@
         dateTimeLabel: "تاریخ و زمان امضا",
         submitButton: "ارسال",
         successMessage: "رضایت پزشکی با موفقیت ارسال شد!",
-        errorMessage: "خطا در ارسال رضایت.",
+        errorMessage: "خطأ في إرسال الموافقة.",
         textDirection: "rtl"
       }
     };
@@ -516,7 +522,7 @@
       document.getElementById('treatmentList').innerHTML = t.treatmentList;
       document.getElementById('notesLabel').textContent = t.notesLabel;
       document.getElementById('additionalNotes').placeholder = t.notesPlaceholder;
-      document.getElementById('consentCheckboxLabel').innerHTML = `<input type="checkbox" id="consentCheckbox" required class="mr-2">${t.consentCheckboxLabel}`;
+      document.getElementById('consentCheckboxLabel').innerHTML = `<input type="checkbox" id="consentCheckbox" name="consentGiven" required class="mr-2">${t.consentCheckboxLabel}`;
       document.getElementById('patientSignatureLabel').textContent = t.patientSignatureLabel;
       document.getElementById('witnessSignatureLabel').textContent = t.witnessSignatureLabel;
       document.getElementById('therapistSignatureLabel').textContent = t.therapistSignatureLabel;
@@ -551,58 +557,49 @@
       } else {
         dateTimeInput.value = now.toLocaleString('en-US', { dateStyle: 'short', timeStyle: 'short' });
       }
+      document.getElementById('timestamp').value = now.toISOString();
     }
     updateDateTime();
 
     // Form Submission
-    document.getElementById('consentForm').addEventListener('submit', async (e) => {
+    document.getElementById('consentForm').addEventListener('submit', (e) => {
       e.preventDefault();
       console.log("Submit button clicked!");
-      const name = document.getElementById('name').value;
-      const fileNumber = document.getElementById('fileNumber').value;
-      const consentGiven = document.getElementById('consentCheckbox').checked;
-      const additionalNotes = document.getElementById('additionalNotes').value;
-      const signatureDateTime = dateTimeInput.value;
-      const patientSignature = canvases.patient.toDataURL('image/png');
-      const witnessSignature = canvases.witness.toDataURL('image/png');
-      const therapistSignature = canvases.therapist.toDataURL('image/png');
+
+      // Update hidden fields with signature data
+      document.getElementById('patientSignature').value = canvases.patient.toDataURL('image/png');
+      document.getElementById('witnessSignature').value = canvases.witness.toDataURL('image/png');
+      document.getElementById('therapistSignature').value = canvases.therapist.toDataURL('image/png');
+
+      // Create a hidden form to submit data
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://script.google.com/macros/s/AKfycbzdGzj9aOE_h3mbLcSznCw9YNjNHvLaHrSkwMb_LHeTJFyQVvUZfxsEREzqfErZNhLO/exec';
 
       const data = {
-        name,
-        fileNumber,
-        consentGiven,
-        additionalNotes,
-        signatureDateTime,
-        patientSignature,
-        witnessSignature,
-        therapistSignature,
-        timestamp: new Date().toISOString()
+        name: document.getElementById('name').value,
+        fileNumber: document.getElementById('fileNumber').value,
+        consentGiven: document.getElementById('consentCheckbox').checked,
+        additionalNotes: document.getElementById('additionalNotes').value,
+        signatureDateTime: document.getElementById('signatureDateTime').value,
+        patientSignature: document.getElementById('patientSignature').value,
+        witnessSignature: document.getElementById('witnessSignature').value,
+        therapistSignature: document.getElementById('therapistSignature').value,
+        timestamp: document.getElementById('timestamp').value
       };
 
       console.log("Data prepared to send:", data);
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbzdGzj9aOE_h3mbLcSznCw9YNjNHvLaHrSkwMb_LHeTJFyQVvUZfxsEREzqfErZNhLO/exec';
-      try {
-        console.log("Sending request to:", scriptUrl);
-        const response = await fetch(scriptUrl, {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: { 'Content-Type': 'application/json' }
-        });
-        console.log("Response received:", response);
-        if (response.ok) {
-          alert(translations[languageToggle.value].successMessage);
-          document.getElementById('consentForm').reset();
-          Object.keys(contexts).forEach(key => {
-            contexts[key].clearRect(0, 0, canvases[key].width, canvases[key].height);
-          });
-          updateDateTime();
-        } else {
-          alert(translations[languageToggle.value].errorMessage);
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert(translations[languageToggle.value].errorMessage);
-      }
+
+      // Add data to the hidden form
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'data';
+      input.value = JSON.stringify(data);
+      form.appendChild(input);
+
+      // Append the form to the body and submit
+      document.body.appendChild(form);
+      form.submit();
     });
   </script>
 </body>
