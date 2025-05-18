@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="formTitle">Medical Consent Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl">
+    <!-- Clinic Logo -->
+    <div class="flex justify-center mb-4">
+      <img id="clinicLogo" src="clinic_logo.png" alt="Delta Plus Clinics Logo" class="h-16">
+    </div>
+
+    <!-- مقدمة -->
+    <div id="introduction" class="mb-4">
+      <p id="introParagraph" class="text-sm">This therapy Consent Form for Delta Plus Clinics includes comprehensive information about the physical therapy and chiropractic services provided at Delta Plus Clinics, which encompass manual therapies, procedures using specialized equipment, rehabilitative exercises, diagnostic assessments, and a wide range of preventive and therapeutic services related to your healthcare. Signing this form signifies your voluntary consent to receive the selected treatments, whether individually or in combination, as deemed in your best health interest by a licensed and qualified healthcare provider. After reviewing and understanding the information, you may document any objections to the use of specific devices or procedures in the additional notes section. At Delta Plus Clinics, we are committed to delivering healthcare according to the highest professional standards, and we note that the clinic and its specialists will not be liable for any unforeseen outcomes that may arise from the treatments, provided they are performed with the care and expertise recognized in the medical field by qualified professionals. This form does not constitute a guarantee of specific results, and your decision to continue with the treatments is based on your personal judgment.</p>
+    </div>
+    <h1 id="formHeader" class="text-2xl font-bold text-center mb-4">Medical Consent Form</h1>
+    
+    <!-- Language Selection -->
+    <div class="mb-4">
+      <label id="languageLabel" class="mr-2">Language:</label>
+      <select id="languageToggle" class="border p-1 rounded">
+        <option value="ar">العربية</option>
+        <option value="en" selected>English</option>
+        <option value="fa">فارسی</option>
+      </select>
+    </div>
+
+    <!-- Form -->
+    <form id="consentForm" class="space-y-4">
+      <div>
+        <label id="nameLabel" for="name" class="block text-sm font-medium">Full Name of Patient</label>
+        <input type="text" id="name" required class="w-full border p-2 rounded">
+      </div>
+      <div>
+        <label id="fileNumberLabel" for="fileNumber" class="block text-sm font-medium">Medical File Number</label>
+        <input type="text" id="fileNumber" required class="w-full border p-2 rounded">
+      </div>
+
+      <!-- Approved Treatments -->
+      <div id="approvedTreatments" class="border p-4 h-64 overflow-y-auto">
+        <h2 id="treatmentsHeader" class="text-lg font-semibold mb-2">Approved Treatments at Delta Plus Clinics</h2>
+        <div id="treatmentList">
+          <p><strong>1. Dry Cupping Therapy</strong></p>
+          <p><strong>Purpose:</strong> Address muscle and bone pain, improve blood flow, and promote relaxation.</p>
+          <p><strong>Procedure:</strong> Place suction cups on the skin to create negative pressure, which may be left stationary or moved.</p>
+          <p><strong>Risks:</strong> Temporary redness or bruising, mild pain; rarely, skin irritation or burns.</p>
+          <p><strong>Benefits:</strong> May reduce pain, improve mobility, and enhance relaxation; results vary by individual.</p>
+          <p><strong>2. Cold Chamber Therapy</strong></p>
+          <p><strong>Purpose:</strong> Reduce inflammation, relieve pain, and enhance recovery using extreme cold.</p>
+          <p><strong>Procedure:</strong> Exposure to sub-zero temperatures in a controlled chamber for a short duration.</p>
+          <p><strong>Risks:</strong> Temporary discomfort, skin redness, or shivering; rarely, frostbite or respiratory issues.</p>
+          <p><strong>Benefits:</strong> May reduce inflammation, improve recovery, and alleviate pain; results vary by individual.</p>
+          <p><strong>3. Dry Needling Therapy</strong></p>
+          <p><strong>Purpose:</strong> Relieve muscle pain and improve musculoskeletal function by targeting trigger points.</p>
+          <p><strong>Procedure:</strong> Insert sterile, single-use needles into muscle trigger points to stimulate a twitch response.</p>
+          <p><strong>Risks:</strong> Temporary pain or bruising, temporary symptom exacerbation; rarely, infection or injury.</p>
+          <p><strong>Benefits:</strong> May reduce pain, improve range of motion, and enhance function; results vary by individual.</p>
+          <p><strong>4. Lymphatic Drainage Therapy</strong></p>
+          <p><strong>Purpose:</strong> Reduce swelling, improve lymphatic circulation, and promote detoxification.</p>
+          <p><strong>Procedure:</strong> Gentle, rhythmic massage to stimulate lymphatic vessels and enhance lymph fluid flow.</p>
+          <p><strong>Risks:</strong> Temporary soreness or sensitivity, mild discomfort; rarely, allergic reactions to massage oils.</p>
+          <p><strong>Benefits:</strong> May reduce swelling, improve immune function, and enhance well-being; results vary by individual.</p>
+          <p><strong>5. Gait Analysis</strong></p>
+          <p><strong>Purpose:</strong> Assess walking patterns and biomechanics of movement to plan treatment.</p>
+          <p><strong>Procedure:</strong> Observe and analyze gait using visual inspection, video, or sensor devices.</p>
+          <p><strong>Risks:</strong> Minimal; may include mild discomfort during walking tests.</p>
+          <p><strong>Benefits:</strong> Provides data to develop targeted treatment plans; outcomes depend on subsequent treatment.</p>
+          <p><strong>6. Zero Gravity Machine Therapy</strong></p>
+          <p><strong>Purpose:</strong> Facilitate exercises with partial weight-bearing and gait training for rehabilitation.</p>
+          <p><strong>Procedure:</strong> Use a machine to reduce body weight during exercise, allowing controlled movement.</p>
+          <p><strong>Risks:</strong> Mild discomfort or muscle soreness; rarely, equipment-related issues.</p>
+          <p><strong>Benefits:</strong> May improve mobility and strength while reducing joint stress; results vary.</p>
+          <p><strong>7. Aquatic Therapy</strong></p>
+          <p><strong>Purpose:</strong> Enhance mobility, reduce pain, and promote rehabilitation using water-based exercises.</p>
+          <p><strong>Procedure:</strong> Supervised exercises in a warm water pool to leverage buoyancy and resistance.</p>
+          <p><strong>Risks:</strong> Temporary muscle soreness, slips, or skin irritation; rarely, water-related infections.</p>
+          <p><strong>Benefits:</strong> May improve mobility, reduce pain, and enhance strength; results vary.</p>
+          <p><strong>8. Shockwave Therapy</strong></p>
+          <p><strong>Purpose:</strong> Treat chronic pain and promote tissue healing using sound waves.</p>
+          <p><strong>Procedure:</strong> Apply high-energy sound waves to affected areas using a handheld device.</p>
+          <p><strong>Risks:</strong> Temporary pain, redness, or bruising; rarely, tissue irritation.</p>
+          <p><strong>Benefits:</strong> May reduce pain and promote healing; results vary by individual.</p>
+          <p><strong>9. Laser Therapy</strong></p>
+          <p><strong>Purpose:</strong> Reduce pain and inflammation and promote tissue healing using low-level laser light.</p>
+          <p><strong>Procedure:</strong> Apply a handheld laser device to emit light energy to affected tissues.</p>
+          <p><strong>Risks:</strong> Mild warmth, tingling, or redness; rarely, symptom exacerbation or allergic reactions.</p>
+          <p><strong>Benefits:</strong> May relieve pain, accelerate healing, and improve mobility; results vary.</p>
+          <p><strong>10. Electrical Therapy</strong></p>
+          <p><strong>Purpose:</strong> Manage pain, stimulate muscle contraction, and promote tissue healing using electrical currents.</p>
+          <p><strong>Procedure:</strong> Apply electrodes to deliver controlled electrical pulses to affected areas.</p>
+          <p><strong>Risks:</strong> Mild discomfort, skin irritation; rarely, burns or muscle soreness.</p>
+          <p><strong>Benefits:</strong> May reduce pain, improve muscle function, and aid healing; results vary.</p>
+          <p><strong>11. Pediatric Physical Therapy (if applicable)</strong></p>
+          <p><strong>Purpose:</strong> Address developmental delays, disabilities, injuries, or conditions affecting a child’s overall health and functional abilities.</p>
+          <p><strong>Procedure:</strong> Therapeutic sessions including activities, exercises, and interventions tailored to the child’s needs in a safe, supportive environment, potentially including physical therapy (to improve gross motor skills), occupational therapy (to enhance fine motor skills), or speech therapy (to address communication delays).</p>
+          <p><strong>Risks:</strong> Temporary discomfort or frustration during sessions; rarely, allergic reactions to equipment or materials.</p>
+          <p><strong>Benefits:</strong> Improved motor skills, coordination, daily abilities, or communication functions; results vary by child.</p>
+          <p><strong>12. Therapy by Opposite-Gender Specialist</strong></p>
+          <p><strong>Purpose:</strong> Provide physical therapy services by an opposite-gender specialist due to their expertise, ensuring optimal care continuity.</p>
+          <p><strong>Procedure:</strong> Perform selected treatments by a licensed opposite-gender specialist, with prior coordination and consent, adhering to professional and ethical standards.</p>
+          <p><strong>Risks:</strong> No direct risks related to gender, though some may feel personal discomfort.</p>
+          <p><strong>Benefits:</strong> Ensures treatment continuity regardless of specialist gender, offering diverse expertise and perspectives to enhance comprehensive care and health well-being.</p>
+        </div>
+      </div>
+
+      <!-- Additional Notes -->
+      <div>
+        <label id="notesLabel" for="additionalNotes" class="block text-sm font-medium">Additional Notes and Reservations (Optional)</label>
+        <textarea id="additionalNotes" class="w-full border p-2 rounded" rows="4" placeholder="Document any objections to specific devices or procedures here..."></textarea>
+      </div>
+
+      <!-- Consent Checkbox -->
+      <div>
+        <label id="consentCheckboxLabel" class="block text-sm font-medium">
+          <input type="checkbox" id="consentCheckbox" required class="mr-2">
+          By signing below and checking this box, I confirm that I have reviewed the information related to the selected treatments, including their purposes, procedures, potential risks, and expected benefits, and that I fully understand them. I acknowledge my voluntary consent to undergo the specified treatments performed by a licensed physical therapist or qualified healthcare provider, except as noted in the additional notes section. Discussions regarding alternative options available for my condition with the doctor or specialist, along with sufficient opportunity to inquire and seek clarifications, have been provided. I recognize my right to ask any additional questions about the treatments at any time. I commit to notifying the physical therapist of any changes in my health condition or any unexpected or unusual reactions before, during, or after the treatments. I also understand that my personal and medical information will be kept strictly confidential in accordance with applicable laws and regulations.
+        </label>
+      </div>
+
+      <!-- Signatures -->
+      <div>
+        <label id="patientSignatureLabel" class="block text-sm font-medium">Patient Signature</label>
+        <canvas id="patientSignatureCanvas" class="border w-full h-32"></canvas>
+        <button type="button" id="clearPatientSignature" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear Patient Signature</button>
+      </div>
+      <div>
+        <label id="witnessSignatureLabel" class="block text-sm font-medium">Witness Signature</label>
+        <canvas id="witnessSignatureCanvas" class="border w-full h-32"></canvas>
+        <button type="button" id="clearWitnessSignature" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear Witness Signature</button>
+      </div>
+      <div>
+        <label id="therapistSignatureLabel" class="block text-sm font-medium">Therapist Signature</label>
+        <canvas id="therapistSignatureCanvas" class="border w-full h-32"></canvas>
+        <button type="button" id="clearTherapistSignature" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear Therapist Signature</button>
+      </div>
+
+      <!-- Date and Time -->
+      <div>
+        <label id="dateTimeLabel" class="block text-sm font-medium">Signature Date and Time</label>
+        <input type="text" id="signatureDateTime" readonly class="w-full border p-2 rounded" value="">
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" id="submitButton" class="w-full bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    // Language Translations
+    const translations = {
+      ar: {
+        formTitle: "نموذج الموافقة الطبية",
+        formHeader: "نموذج الموافقة الطبية",
+        introParagraph: "نموذج موافقة العلاج الطبيعي الموحد عيادات دلتا بلس يشمل معلومات شاملة حول خدمات العلاج الطبيعي والتقويمي المقدمة في عيادات دلتا بلس، والتي تتضمن العلاجات اليدوية، الإجراءات باستخدام الأجهزة المتخصصة، التمارين التأهيلية، التقييمات التشخيصية، ومجموعة واسعة من الخدمات الوقائية والعلاجية المرتبطة برعايتكم الصحية. والتوقيع على هذا النموذج هو إبداء لموافقتكم الطوعية على تلقي العلاجات المختارة، سواء كانت منفردة أو مدمجة، وفقًا لما يراه مقدم الرعاية الصحية المرخص والمؤهل في مصلحتكم الصحية. بإمكانكم بعد الاطلاع والفهم، توثيق أي اعتراض على استخدام جهاز أو إجراء معين في خانة الملحوظات الإضافية. نحن نلتزم في عيادات دلتا بلس بتقديم رعاية صحية وفق أرقى المعايير المهنية، وننوه أن العيادة وأخصائييها لن يتحملوا مسؤولية أي نتائج غير متوقعة قد تنشأ عن العلاجات، شريطة أن تُنفذ بعناية وخبرة متعارف عليها في المجال الطبي من قبل مختصين. ولا يعد هذا النموذج تعهداً بنتائج محددة، وقرار مواصلتكم العلاجات يرتكز على تقديركم الشخصي.",
+        languageLabel: "اللغة:",
+        nameLabel: "اسم المريض الكامل",
+        fileNumberLabel: "رقم الملف الطبي",
+        treatmentsHeader: "العلاجات المعتمدة في عيادات دلتا بلس",
+        treatmentList: `
+          <p><strong>1. العلاج بالكاسات الجافة</strong></p>
+          <p><strong>الغرض:</strong> معالجة آلام العضلات والعظام، تحسين تدفق الدم، وتعزيز الاسترخاء.</p>
+          <p><strong>الإجراء:</strong> وضع كاسات شفط على الجلد لخلق ضغط سلبي، قد تُترك ثابتة أو تُحرك.</p>
+          <p><strong>المخاطر:</strong> احمرار أو كدمات مؤقتة، ألم خفيف؛ نادرًا، تهيج الجلد أو الحروق.</p>
+          <p><strong>الفوائد:</strong> قد يقلل الألم، يحسن الحركة، ويعزز الاسترخاء؛ النتائج تختلف حسب الفرد.</p>
+          <p><strong>2. العلاج بالغرفة الباردة</strong></p>
+          <p><strong>الغرض:</strong> تقليل الالتهاب، تخفيف الألم، وتعزيز التعافي باستخدام البرد الشديد.</p>
+          <p><strong>الإجراء:</strong> التعرض لدرجات حرارة تحت الصفر في غرفة يتم التحكم فيها لمدة قصيرة.</p>
+          <p><strong>المخاطر:</strong> إزعاج مؤقت، احمرار الجلد، أو الارتجاف؛ نادرًا، قضمة الصقيع أو مشاكل تنفسية.</p>
+          <p><strong>الفوائد:</strong> قد يقلل الالتهاب، يحسن التعافي، ويخفف الألم؛ النتائج تختلف حسب الفرد.</p>
+          <p><strong>3. العلاج بالإبر الجافة</strong></p>
+          <p><strong>الغرض:</strong> تخفيف آلام العضلات وتحسين وظائف الجهاز العضلي الهيكلي من خلال استهداف نقاط الزناد.</p>
+          <p><strong>الإجراء:</strong> إدخال إبر معقمة للاستخدام لمرة واحدة في نقاط زناد العضلات لتحفيز استجابة انقباضية.</p>
+          <p><strong>المخاطر:</strong> ألم أو كدمات مؤقتة، تفاقم مؤقت للأعراض؛ نادرًا، عدوى أو إصابة.</p>
+          <p><strong>الفوائد:</strong> قد يقلل الألم، يحسن نطاق الحركة، ويعزز الوظائف؛ النتائج تختلف حسب الفرد.</p>
+          <p><strong>4. العلاج بالتصريف اللمفاوي</strong></p>
+          <p><strong>الغرض:</strong> تقليل التورم، تحسين الدورة اللمفاوية، وتعزيز إزالة السموم.</p>
+          <p><strong>الإجراء:</strong> تدليك لطيف ومنتظم لتحفيز الأوعية اللمفاوية وتعزيز تدفق السائل اللمفاوي.</p>
+          <p><strong>المخاطر:</strong> ألم أو حساسية مؤقتة، إزعاج خفيف؛ نادرًا، حساسية من زيوت التدليك.</p>
+          <p><strong>الفوائد:</strong> قد يقلل التورم، يحسن وظيفة المناعة، ويعزز الرفاهية؛ النتائج تختلف حسب الفرد.</p>
+          <p><strong>5. تحليل المشية</strong></p>
+          <p><strong>الغرض:</strong> تقييم أنماط المشي والميكانيكا الحيوية للحركة لتخطيط العلاج.</p>
+          <p><strong>الإجراء:</strong> مراقبة وتحليل المشي باستخدام الرؤية، الفيديو، أو أجهزة استشعار.</p>
+          <p><strong>المخاطر:</strong> ضئيلة؛ قد تشمل إزعاج خفيف أثناء اختبارات المشي.</p>
+          <p><strong>الفوائد:</strong> يوفر بيانات لتطوير خطط علاج مستهدفة؛ النتائج تعتمد على العلاج اللاحق.</p>
+          <p><strong>6. العلاج بآلة الجاذبية الصفرية</strong></p>
+          <p><strong>الغرض:</strong> تسهيل التمارين بتحمل وزن جزئي وتدريب المشي لإعادة التأهيل.</p>
+          <p><strong>الإجراء:</strong> استخدام آلة لتقليل وزن الجسم أثناء التمرين، مما يسمح بحركة متحكم فيها.</p>
+          <p><strong>المخاطر:</strong> إزعاج خفيف أو ألم عضلي؛ نادرًا، مشاكل متعلقة بالمعدات.</p>
+          <p><strong>الفوائد:</strong> قد يحسن الحركة والقوة مع تقليل الضغط على المفاصل؛ النتائج تختلف.</p>
+          <p><strong>7. العلاج المائي</strong></p>
+          <p><strong>الغرض:</strong> تحسين الحركة، تقليل الألم، وتعزيز إعادة التأهيل باستخدام تمارين مائية.</p>
+          <p><strong>الإجراء:</strong> تمارين تحت الإشراف في حوض ماء دافئ للاستفادة من الطفو والمقاومة.</p>
+          <p><strong>المخاطر:</strong> ألم عضلي مؤقت، الانزلاق، أو تهيج الجلد؛ نادرًا، عدوى من الماء.</p>
+          <p><strong>الفوائد:</strong> قد يحسن الحركة، يقلل الألم، ويعزز القوة؛ النتائج تختلف.</p>
+          <p><strong>8. العلاج بالموجات التصادمية</strong></p>
+          <p><strong>الغرض:</strong> معالجة الألم المزمن وتعزيز شفاء الأنسجة باستخدام الموجات الصوتية.</p>
+          <p><strong>الإجراء:</strong> تطبيق موجات صوتية عالية الطاقة على المناطق المصابة باستخدام جهاز محمول.</p>
+          <p><strong>المخاطر:</strong> ألم مؤقت، احمرار، أو كدمات؛ نادرًا، تهيج الأنسجة.</p>
+          <p><strong>الفوائد:</strong> قد يقلل الألم ويعزز الشفاء؛ النتائج تختلف حسب الفرد.</p>
+          <p><strong>9. العلاج بالليزر</strong></p>
+          <p><strong>الغرض:</strong> تقليل الألم والالتهاب وتعزيز شفاء الأنسجة باستخدام ضوء الليزر منخفض المستوى.</p>
+          <p><strong>الإجراء:</strong> تطبيق جهاز ليزر محمول لإصدار طاقة ضوئية إلى الأنسجة المصابة.</p>
+          <p><strong>المخاطر:</strong> دفء خفيف، وخز، أو احمرار؛ نادرًا، تفاقم الأعراض أو ردود فعل تحسسية.</p>
+          <p><strong>الفوائد:</strong> قد يخفف الألم، يسرع الشفاء، ويحسن الحركة؛ النتائج تختلف.</p>
+          <p><strong>10. العلاج الكهربائي</strong></p>
+          <p><strong>الغرض:</strong> إدارة الألم، تحفيز انقباض العضلات، وتعزيز شفاء الأنسجة باستخدام التيارات الكهربائية.</p>
+          <p><strong>الإجراء:</strong> تطبيق أقطاب كهربائية لإيصال نبضات كهربائية متحكم فيها إلى المناطق المصابة.</p>
+          <p><strong>المخاطر:</strong> إزعاج خفيف، تهيج الجلد؛ نادرًا، حروق أو ألم عضلي.</p>
+          <p><strong>الفوائد:</strong> قد يقلل الألم، يحسن وظيفة العضلات، ويساعد على الشفاء؛ النتائج تختلف.</p>
+          <p><strong>11. العلاج الطبيعي للأطفال القصر (إذا وجد)</strong></p>
+          <p><strong>الغرض:</strong> معالجة التأخرات التنموية، الإعاقات، الإصابات، أو الحالات التي تؤثر على صحة الطفل وقدراته الوظيفية بشكل عام.</p>
+          <p><strong>الإجراء:</strong> جلسات علاجية تشمل أنشطة، تمارين، وتدخلات مصممة لتلبية احتياجات الطفل في بيئة آمنة وداعمة، قد تشمل العلاج الطبيعي (لتحسين المهارات الحركية الكبرى)، العلاج الوظيفي (لتحسين المهارات الحركية الدقيقة)، أو علاج النطق (لمعالجة تأخرات التواصل).</p>
+          <p><strong>المخاطر:</strong> إزعاج أو إحباط مؤقت أثناء الجلسات؛ نادرًا، ردود فعل تحسسية للمعدات أو المواد.</p>
+          <p><strong>الفوائد:</strong> تحسين المهارات الحركية، التناسق، القدرات اليومية، أو وظائف التواصل؛ النتائج تختلف حسب الطفل.</p>
+          <p><strong>12. العلاج بمختص من الجنس الآخر</strong></p>
+          <p><strong>الغرض:</strong> تقديم خدمات العلاج الطبيعي بواسطة أخصائي من الجنس الآخر لخبرتهم وضمان استمرارية الرعاية على الشكل الأمثل.</p>
+          <p><strong>الإجراء:</strong> تنفيذ العلاجات المختارة بواسطة مختص مرخص من الجنس الآخر، وذلك بعد التنسيق والاستذان مع الالتزام بالمعايير المهنية والأخلاقية.</p>
+          <p><strong>المخاطر:</strong> لا توجد مخاطر مباشرة مرتبطة بالجنس، لكن قد يشعر البعض بعدم الراحة الشخصية.</p>
+          <p><strong>الفوائد:</strong> ضمان استمرارية العلاج بغض النظر عن جنس المختص، الحصول على تجربة علاجية من عدة تخصصات وزوايا مختلفة مما يعزز العلاج الشامل والرفاهية الصحية.</p>
+        `,
+        notesLabel: "ملحوظات وتحفظات إضافية (اختياري)",
+        notesPlaceholder: "سجّل أي اعتراض على استخدام جهاز أو إجراء معين هنا...",
+        consentCheckboxLabel: "من خلال التوقيع أدناه ووضع علامة في هذا المربع، أؤكد أنني اطلعت على المعلومات المتعلقة بالعلاجات المختارة، بما في ذلك أغراضها، إجراءاتها، المخاطر المحتملة، والفوائد المتوقعة، وأنني فهمتها بالكامل واقر بموافقتي الطوعية على إجراء العلاجات المحددة بواسطة أخصائي علاج طبيعي مرخص أو مقدم رعاية صحية مؤهل ماعدا ما قمت بكتابته في خانة الملحوظات. مناقشة الخيارات البديلة المتاحة لحالتي مع الدكتور أو الأخصائي وتزويدي بفرصة كافية للاستفسار وطلب التوضيحات تم طرحهم. أدرك حقي في طرح أي أسئلة إضافية حول العلاجات في أي وقت. وألتزم بإخطار أخصائي العلاج الطبيعي بأي تغييرات في حالتي الصحية أو أي ردود فعل غير متوقعة أو غير عادية قبل وأثناء وبعد العلاجات. أتفهم أيضًا أن معلوماتي الشخصية والطبية ستُحفظ بسرية تامة وفقًا للقوانين والتشريعات السارية.",
+        patientSignatureLabel: "توقيع المريض",
+        witnessSignatureLabel: "توقيع الشاهد",
+        therapistSignatureLabel: "توقيع المعالج",
+        clearPatientSignature: "مسح توقيع المريض",
+        clearWitnessSignature: "مسح توقيع الشاهد",
+        clearTherapistSignature: "مسح توقيع المعالج",
+        dateTimeLabel: "وقت وتاريخ التوقيع",
+        submitButton: "إرسال",
+        successMessage: "تم إرسال الموافقة الطبية بنجاح!",
+        errorMessage: "خطأ في إرسال الموافقة.",
+        textDirection: "rtl"
+      },
+      en: {
+        formTitle: "Medical Consent Form",
+        formHeader: "Medical Consent Form",
+        introParagraph: "This therapy Consent Form for Delta Plus Clinics includes comprehensive information about the physical therapy and chiropractic services provided at Delta Plus Clinics, which encompass manual therapies, procedures using specialized equipment, rehabilitative exercises, diagnostic assessments, and a wide range of preventive and therapeutic services related to your healthcare. Signing this form signifies your voluntary consent to receive the selected treatments, whether individually or in combination, as deemed in your best health interest by a licensed and qualified healthcare provider. After reviewing and understanding the information, you may document any objections to the use of specific devices or procedures in the additional notes section. At Delta Plus Clinics, we are committed to delivering healthcare according to the highest professional standards, and we note that the clinic and its specialists will not be liable for any unforeseen outcomes that may arise from the treatments, provided they are performed with the care and expertise recognized in the medical field by qualified professionals. This form does not constitute a guarantee of specific results, and your decision to continue with the treatments is based on your personal judgment.",
+        languageLabel: "Language:",
+        nameLabel: "Full Name of Patient",
+        fileNumberLabel: "Medical File Number",
+        treatmentsHeader: "Approved Treatments at Delta Plus Clinics",
+        treatmentList: `
+          <p><strong>1. Dry Cupping Therapy</strong></p>
+          <p><strong>Purpose:</strong> Address muscle and bone pain, improve blood flow, and promote relaxation.</p>
+          <p><strong>Procedure:</strong> Place suction cups on the skin to create negative pressure, which may be left stationary or moved.</p>
+          <p><strong>Risks:</strong> Temporary redness or bruising, mild pain; rarely, skin irritation or burns.</p>
+          <p><strong>Benefits:</strong> May reduce pain, improve mobility, and enhance relaxation; results vary by individual.</p>
+          <p><strong>2. Cold Chamber Therapy</strong></p>
+          <p><strong>Purpose:</strong> Reduce inflammation, relieve pain, and enhance recovery using extreme cold.</p>
+          <p><strong>Procedure:</strong> Exposure to sub-zero temperatures in a controlled chamber for a short duration.</p>
+          <p><strong>Risks:</strong> Temporary discomfort, skin redness, or shivering; rarely, frostbite or respiratory issues.</p>
+          <p><strong>Benefits:</strong> May reduce inflammation, improve recovery, and alleviate pain; results vary by individual.</p>
+          <p><strong>3. Dry Needling Therapy</strong></p>
+          <p><strong>Purpose:</strong> Relieve muscle pain and improve musculoskeletal function by targeting trigger points.</p>
+          <p><strong>Procedure:</strong> Insert sterile, single-use needles into muscle trigger points to stimulate a twitch response.</p>
+          <p><strong>Risks:</strong> Temporary pain or bruising, temporary symptom exacerbation; rarely, infection or injury.</p>
+          <p><strong>Benefits:</strong> May reduce pain, improve range of motion, and enhance function; results vary by individual.</p>
+          <p><strong>4. Lymphatic Drainage Therapy</strong></p>
+          <p><strong>Purpose:</strong> Reduce swelling, improve lymphatic circulation, and promote detoxification.</p>
+          <p><strong>Procedure:</strong> Gentle, rhythmic massage to stimulate lymphatic vessels and enhance lymph fluid flow.</p>
+          <p><strong>Risks:</strong> Temporary soreness or sensitivity, mild discomfort; rarely, allergic reactions to massage oils.</p>
+          <p><strong>Benefits:</strong> May reduce swelling, improve immune function, and enhance well-being; results vary by individual.</p>
+          <p><strong>5. Gait Analysis</strong></p>
+          <p><strong>Purpose:</strong> Assess walking patterns and biomechanics of movement to plan treatment.</p>
+          <p><strong>Procedure:</strong> Observe and analyze gait using visual inspection, video, or sensor devices.</p>
+          <p><strong>Risks:</strong> Minimal; may include mild discomfort during walking tests.</p>
+          <p><strong>Benefits:</strong> Provides data to develop targeted treatment plans; outcomes depend on subsequent treatment.</p>
+          <p><strong>6. Zero Gravity Machine Therapy</strong></p>
+          <p><strong>Purpose:</strong> Facilitate exercises with partial weight-bearing and gait training for rehabilitation.</p>
+          <p><strong>Procedure:</strong> Use a machine to reduce body weight during exercise, allowing controlled movement.</p>
+          <p><strong>Risks:</strong> Mild discomfort or muscle soreness; rarely, equipment-related issues.</p>
+          <p><strong>Benefits:</strong> May improve mobility and strength while reducing joint stress; results vary.</p>
+          <p><strong>7. Aquatic Therapy</strong></p>
+          <p><strong>Purpose:</strong> Enhance mobility, reduce pain, and promote rehabilitation using water-based exercises.</p>
+          <p><strong>Procedure:</strong> Supervised exercises in a warm water pool to leverage buoyancy and resistance.</p>
+          <p><strong>Risks:</strong> Temporary muscle soreness, slips, or skin irritation; rarely, water-related infections.</p>
+          <p><strong>Benefits:</strong> May improve mobility, reduce pain, and enhance strength; results vary.</p>
+          <p><strong>8. Shockwave Therapy</strong></p>
+          <p><strong>Purpose:</strong> Treat chronic pain and promote tissue healing using sound waves.</p>
+          <p><strong>Procedure:</strong> Apply high-energy sound waves to affected areas using a handheld device.</p>
+          <p><strong>Risks:</strong> Temporary pain, redness, or bruising; rarely, tissue irritation.</p>
+          <p><strong>Benefits:</strong> May reduce pain and promote healing; results vary by individual.</p>
+          <p><strong>9. Laser Therapy</strong></p>
+          <p><strong>Purpose:</strong> Reduce pain and inflammation and promote tissue healing using low-level laser light.</p>
+          <p><strong>Procedure:</strong> Apply a handheld laser device to emit light energy to affected tissues.</p>
+          <p><strong>Risks:</strong> Mild warmth, tingling, or redness; rarely, symptom exacerbation or allergic reactions.</p>
+          <p><strong>Benefits:</strong> May relieve pain, accelerate healing, and improve mobility; results vary.</p>
+          <p><strong>10. Electrical Therapy</strong></p>
+          <p><strong>Purpose:</strong> Manage pain, stimulate muscle contraction, and promote tissue healing using electrical currents.</p>
+          <p><strong>Procedure:</strong> Apply electrodes to deliver controlled electrical pulses to affected areas.</p>
+          <p><strong>Risks:</strong> Mild discomfort, skin irritation; rarely, burns or muscle soreness.</p>
+          <p><strong>Benefits:</strong> May reduce pain, improve muscle function, and aid healing; results vary.</p>
+          <p><strong>11. Pediatric Physical Therapy (if applicable)</strong></p>
+          <p><strong>Purpose:</strong> Address developmental delays, disabilities, injuries, or conditions affecting a child’s overall health and functional abilities.</p>
+          <p><strong>Procedure:</strong> Therapeutic sessions including activities, exercises, and interventions tailored to the child’s needs in a safe, supportive environment, potentially including physical therapy (to improve gross motor skills), occupational therapy (to enhance fine motor skills), or speech therapy (to address communication delays).</p>
+          <p><strong>Risks:</strong> Temporary discomfort or frustration during sessions; rarely, allergic reactions to equipment or materials.</p>
+          <p><strong>Benefits:</strong> Improved motor skills, coordination, daily abilities, or communication functions; results vary by child.</p>
+          <p><strong>12. Therapy by Opposite-Gender Specialist</strong></p>
+          <p><strong>Purpose:</strong> Provide physical therapy services by an opposite-gender specialist due to their expertise, ensuring optimal care continuity.</p>
+          <p><strong>Procedure:</strong> Perform selected treatments by a licensed opposite-gender specialist, with prior coordination and consent, adhering to professional and ethical standards.</p>
+          <p><strong>Risks:</strong> No direct risks related to gender, though some may feel personal discomfort.</p>
+          <p><strong>Benefits:</strong> Ensures treatment continuity regardless of specialist gender, offering diverse expertise and perspectives to enhance comprehensive care and health well-being.</p>
+        `,
+        notesLabel: "Additional Notes and Reservations (Optional)",
+        notesPlaceholder: "Document any objections to specific devices or procedures here...",
+        consentCheckboxLabel: "By signing below and checking this box, I confirm that I have reviewed the information related to the selected treatments, including their purposes, procedures, potential risks, and expected benefits, and that I fully understand them. I acknowledge my voluntary consent to undergo the specified treatments performed by a licensed physical therapist or qualified healthcare provider, except as noted in the additional notes section. Discussions regarding alternative options available for my condition with the doctor or specialist, along with sufficient opportunity to inquire and seek clarifications, have been provided. I recognize my right to ask any additional questions about the treatments at any time. I commit to notifying the physical therapist of any changes in my health condition or any unexpected or unusual reactions before, during, or after the treatments. I also understand that my personal and medical information will be kept strictly confidential in accordance with applicable laws and regulations.",
+        patientSignatureLabel: "Patient Signature",
+        witnessSignatureLabel: "Witness Signature",
+        therapistSignatureLabel: "Therapist Signature",
+        clearPatientSignature: "Clear Patient Signature",
+        clearWitnessSignature: "Clear Witness Signature",
+        clearTherapistSignature: "Clear Therapist Signature",
+        dateTimeLabel: "Signature Date and Time",
+        submitButton: "Submit",
+        successMessage: "Medical consent submitted successfully!",
+        errorMessage: "Error submitting consent.",
+        textDirection: "ltr"
+      },
+      fa: {
+        formTitle: "فرم رضایت پزشکی",
+        formHeader: "فرم رضایت پزشکی",
+        introParagraph: "فرم رضایت یکپارچه فیزیوتراپی کلینیک‌های دلتا پلاس شامل اطلاعات جامعی در مورد خدمات فیزیوتراپی و کایروپراکتیک ارائه‌شده در کلینیک‌های دلتا پلاس است، که شامل درمان‌های دستی، رویه‌ها با استفاده از تجهیزات تخصصی، تمرینات توان‌بخشی، ارزیابی‌های تشخیصی و طیف گسترده‌ای از خدمات پیشگیرانه و درمانی مرتبط با مراقبت‌های بهداشتی شما می‌شود. امضای این فرم نشان‌دهنده رضایت داوطلبانه شما برای دریافت درمان‌های انتخاب‌شده، چه به‌صورت جداگانه و چه به‌صورت ترکیبی، طبق آنچه ارائه‌دهنده مراقبت‌های بهداشتی دارای مجوز و واجد شرایط به نفع سلامت شما تشخیص می‌دهد، است. پس از بررسی و درک اطلاعات، می‌توانید هرگونه اعتراض به استفاده از دستگاه‌ها یا رویه‌های خاص را در بخش یادداشت‌های اضافی ثبت کنید. ما در کلینیک‌های دلتا پلاس متعهد به ارائه مراقبت‌های بهداشتی مطابق با بالاترین استانداردهای حرفه‌ای هستیم و خاطرنشان می‌کنیم که کلینیک و متخصصان آن مسئول نتایج غیرمنتظره‌ای که ممکن است از درمان‌ها ناشی شود، نیستند، مشروط بر اینکه با دقت و تخصص شناخته‌شده در حوزه پزشکی توسط متخصصان واجد شرایط انجام شوند. این فرم تضمینی برای نتایج خاص نیست، و تصمیم شما برای ادامه درمان‌ها بر اساس قضاوت شخصی شما است.",
+        languageLabel: "زبان:",
+        nameLabel: "نام کامل بیمار",
+        fileNumberLabel: "شماره پرونده پزشکی",
+        treatmentsHeader: "درمان‌های تأییدشده در کلینیک‌های دلتا پلاس",
+        treatmentList: `
+          <p><strong>1. درمان با حجامت خشک</strong></p>
+          <p><strong>هدف:</strong> درمان دردهای عضلانی و استخوانی، بهبود جریان خون و تقویت آرامش.</p>
+          <p><strong>روش:</strong> قرار دادن فنجان‌های مکش روی پوست برای ایجاد فشار منفی، که ممکن است ثابت بمانند یا حرکت داده شوند.</p>
+          <p><strong>خطرات:</strong> قرمزی یا کبودی موقت، درد خفیف؛ به ندرت، تحریک پوست یا سوختگی.</p>
+          <p><strong>فواید:</strong> ممکن است درد را کاهش دهد، تحرک را بهبود بخشد و آرامش را تقویت کند؛ نتایج بسته به فرد متفاوت است.</p>
+          <p><strong>2. درمان با اتاق سرد</strong></p>
+          <p><strong>هدف:</strong> کاهش التهاب، تسکین درد و تقویت بهبودی با استفاده از سرمای شدید.</p>
+          <p><strong>روش:</strong> قرار گرفتن در معرض دماهای زیر صفر در یک اتاق کنترل‌شده برای مدت کوتاه.</p>
+          <p><strong>خطرات:</strong> ناراحتی موقت، قرمزی پوست یا لرز؛ به ندرت، سرمازدگی یا مشکلات تنفسی.</p>
+          <p><strong>فواید:</strong> ممکن است التهاب را کاهش دهد، بهبودی را بهبود بخشد و درد را تسکین دهد؛ نتایج بسته به فرد متفاوت است.</p>
+          <p><strong>3. درمان با سوزن خشک</strong></p>
+          <p><strong>هدف:</strong> تسکین درد عضلانی و بهبود عملکرد سیستم عضلانی-اسکلتی با هدف قرار دادن نقاط ماشه‌ای.</p>
+          <p><strong>روش:</strong> وارد کردن سوزن‌های استریل یک‌بار مصرف به نقاط ماشه‌ای عضلات برای تحریک پاسخ انقباضی.</p>
+          <p><strong>خطرات:</strong> درد یا کبودی موقت، تشدید موقت علائم؛ به ندرت، عفونت یا آسیب.</p>
+          <p><strong>فواید:</strong> ممکن است درد را کاهش دهد، دامنه حرکتی را بهبود بخشد و عملکرد را تقویت کند؛ نتایج بسته به فرد متفاوت است.</p>
+          <p><strong>4. درمان تخلیه لنفاوی</strong></p>
+          <p><strong>هدف:</strong> کاهش تورم، بهبود گردش لنفاوی و تقویت سم‌زدایی.</p>
+          <p><strong>روش:</strong> ماساژ ملایم و ریتمیک برای تحریک عروق لنفاوی و تقویت جریان مایع لنفاوی.</p>
+          <p><strong>خطرات:</strong> درد یا حساسیت موقت، ناراحتی خفیف؛ به ندرت، حساسیت به روغن‌های ماساژ.</p>
+          <p><strong>فواید:</strong> ممکن است تورم را کاهش دهد، عملکرد ایمنی را بهبود بخشد و رفاه را تقویت کند؛ نتایج بسته به فرد متفاوت است.</p>
+          <p><strong>5. تجزیه و تحلیل راه رفتن</strong></p>
+          <p><strong>هدف:</strong> ارزیابی الگوهای راه رفتن و بیومکانیک حرکت برای برنامه‌ریزی درمان.</p>
+          <p><strong>روش:</strong> مشاهده و تجزیه و تحلیل راه رفتن با استفاده از مشاهده بصری، ویدئو یا دستگاه‌های حسگر.</p>
+          <p><strong>خطرات:</strong> حداقل؛ ممکن است شامل ناراحتی خفیف در طول تست‌های راه رفتن باشد.</p>
+          <p><strong>فواید:</strong> داده‌هایی برای توسعه برنامه‌های درمانی هدفمند فراهم می‌کند؛ نتایج به درمان بعدی بستگی دارد.</p>
+          <p><strong>6. درمان با دستگاه جاذبه صفر</strong></p>
+          <p><strong>هدف:</strong> تسهیل تمرینات با تحمل وزن جزئی و آموزش راه رفتن برای توان‌بخشی.</p>
+          <p><strong>روش:</strong> استفاده از دستگاه برای کاهش وزن بدن در طول تمرین، امکان حرکت کنترل‌شده را فراهم می‌کند.</p>
+          <p><strong>خطرات:</strong> ناراحتی خفیف یا درد عضلانی؛ به ندرت، مشکلات مرتبط با تجهیزات.</p>
+          <p><strong>فواید:</strong> ممکن است تحرک و قدرت را بهبود بخشد در حالی که فشار روی مفاصل را کاهش می‌دهد؛ نتایج متفاوت است.</p>
+          <p><strong>7. درمان آبی</strong></p>
+          <p><strong>هدف:</strong> بهبود تحرک، کاهش درد و تقویت توان‌بخشی با استفاده از تمرینات مبتنی بر آب.</p>
+          <p><strong>روش:</strong> تمرینات تحت نظارت در استخر آب گرم برای بهره‌برداری از شناوری و مقاومت.</p>
+          <p><strong>خطرات:</strong> درد عضلانی موقت، لغزش یا تحریک پوست؛ به ندرت، عفونت‌های مرتبط با آب.</p>
+          <p><strong>فواید:</strong> ممکن است تحرک را بهبود بخشد، درد را کاهش دهد و قدرت را تقویت کند؛ نتایج متفاوت است.</p>
+          <p><strong>8. درمان با امواج شوک</strong></p>
+          <p><strong>هدف:</strong> درمان درد مزمن و تقویت بهبود بافت با استفاده از امواج صوتی.</p>
+          <p><strong>روش:</strong> اعمال امواج صوتی با انرژی بالا به مناطق آسیب‌دیده با استفاده از دستگاه دستی.</p>
+          <p><strong>خطرات:</strong> درد موقت، قرمزی یا کبودی؛ به ندرت، تحریک بافت.</p>
+          <p><strong>فواید:</strong> ممکن است درد را کاهش دهد و بهبود را تقویت کند؛ نتایج بسته به فرد متفاوت است.</p>
+          <p><strong>9. درمان با لیزر</strong></p>
+          <p><strong>هدف:</strong> کاهش درد و التهاب و تقویت بهبود بافت با استفاده از نور لیزر کم‌توان.</p>
+          <p><strong>روش:</strong> اعمال دستگاه لیزر دستی برای انتشار انرژی نوری به بافت‌های آسیب‌دیده.</p>
+          <p><strong>خطرات:</strong> گرمای خفیف، سوزن‌سوزن شدن یا قرمزی؛ به ندرت، تشدید علائم یا واکنش‌های آلرژیک.</p>
+          <p><strong>فواید:</strong> ممکن است درد را تسکین دهد، بهبود را تسریع کند و تحرک را بهبود بخشد؛ نتایج متفاوت است.</p>
+          <p><strong>10. درمان الکتریکی</strong></p>
+          <p><strong>هدف:</strong> مدیریت درد، تحریک انقباض عضلانی و تقویت بهبود بافت با استفاده از جریان‌های الکتریکی.</p>
+          <p><strong>روش:</strong> اعمال الکترودها برای انتقال پالس‌های الکتریکی کنترل‌شده به مناطق آسیب‌دیده.</p>
+          <p><strong>خطرات:</strong> ناراحتی خفیف، تحریک پوست؛ به ندرت، سوختگی یا درد عضلانی.</p>
+          <p><strong>فواید:</strong> ممکن است درد را کاهش دهد، عملکرد عضلانی را بهبود بخشد و به بهبود کمک کند؛ نتایج متفاوت است.</p>
+          <p><strong>11. فیزیوتراپی کودکان (در صورت وجود)</strong></p>
+          <p><strong>هدف:</strong> درمان تأخیرات رشدی، ناتوانی‌ها، آسیب‌ها یا شرایطی که بر سلامت کلی و توانایی‌های عملکردی کودک تأثیر می‌گذارد.</p>
+          <p><strong>روش:</strong> جلسات درمانی شامل فعالیت‌ها، تمرینات و مداخلات طراحی‌شده برای رفع نیازهای کودک در محیطی امن و حمایتی، ممکن است شامل فیزیوتراپی (برای بهبود مهارت‌های حرکتی درشت)، کاردرمانی (برای تقویت مهارت‌های حرکتی ظریف) یا گفتاردرمانی (برای رفع تأخیرات ارتباطی) باشد.</p>
+          <p><strong>خطرات:</strong> ناراحتی یا ناامیدی موقت در طول جلسات؛ به ندرت، واکنش‌های آلرژیک به تجهیزات یا مواد.</p>
+          <p><strong>فواید:</strong> بهبود مهارت‌های حرکتی، هماهنگی، توانایی‌های روزانه یا عملکردهای ارتباطی؛ نتایج بسته به کودک متفاوت است。</p>
+          <p><strong>12. درمان توسط متخصص جنس مخالف</strong></p>
+          <p><strong>هدف:</strong> ارائه خدمات فیزیوتراپی توسط متخصص جنس مخالف به دلیل تخصص آنها، تضمین تداوم مراقبت به بهترین شکل.</p>
+          <p><strong>روش:</strong> انجام درمان‌های انتخاب‌شده توسط متخصص دارای مجوز از جنس مخالف، با هماهنگی و رضایت قبلی، با رعایت استانداردهای حرفه‌ای و اخلاقی.</p>
+          <p><strong>خطرات:</strong> هیچ خطر مستقیم مرتبط با جنسیت وجود ندارد، اگرچه برخی ممکن است احساس ناراحتی شخصی کنند.</p>
+          <p><strong>فواید:</strong> تضمین تداوم درمان صرف‌نظر از جنسیت متخصص، ارائه تجربه درمانی با تخصص‌ها و دیدگاه‌های متنوع برای تقویت مراقبت جامع و بهزیستی سلامت.</p>
+        `,
+        notesLabel: "یادداشت‌ها و تحفظات اضافی (اختیاری)",
+        notesPlaceholder: "هرگونه اعتراض به استفاده از دستگاه‌ها یا رویه‌های خاص را اینجا ثبت کنید...",
+        consentCheckboxLabel: "با امضای زیر و علامت زدن این کادر، تأیید می‌کنم که اطلاعات مربوط به درمان‌های انتخاب‌شده، شامل اهداف، رویه‌ها، خطرات احتمالی و فواید مورد انتظار را بررسی کرده‌ام و به‌طور کامل آن‌ها را درک کرده‌ام. رضایت داوطلبانه خود را برای انجام درمان‌های مشخص‌شده توسط فیزیوتراپیست دارای مجوز یا ارائه‌دهنده مراقبت‌های بهداشتی واجد شرایط، به جز مواردی که در بخش یادداشت‌های اضافی ذکر کرده‌ام، اعلام می‌کنم. بحث در مورد گزینه‌های جایگزین موجود برای شرایطم با پزشک یا متخصص و ارائه فرصت کافی برای پرس‌وجو و درخواست توضیحات انجام شده است. حق خود را برای پرسیدن هرگونه سؤال اضافی درباره درمان‌ها در هر زمان به رسمیت می‌شناسم. متعهد می‌شوم که هرگونه تغییر در وضعیت سلامتی‌ام یا هرگونه واکنش غیرمنتظره یا غیرعادی قبل، حین یا پس از درمان‌ها را به فیزیوتراپیست اطلاع دهم. همچنین درک می‌کنم که اطلاعات شخصی و پزشکی من طبق قوانین و مقررات قابل اجرا به‌صورت کاملاً محرمانه حفظ خواهد شد.",
+        patientSignatureLabel: "امضای بیمار",
+        witnessSignatureLabel: "امضای شاهد",
+        therapistSignatureLabel: "امضای درمانگر",
+        clearPatientSignature: "پاک کردن امضای بیمار",
+        clearWitnessSignature: "پاک کردن امضای شاهد",
+        clearTherapistSignature: "پاک کردن امضای درمانگر",
+        dateTimeLabel: "تاریخ و زمان امضا",
+        submitButton: "ارسال",
+        successMessage: "رضایت پزشکی با موفقیت ارسال شد!",
+        errorMessage: "خطا در ارسال رضایت.",
+        textDirection: "rtl"
+      }
+    };
+
+    // Signature Canvases
+    const canvases = {
+      patient: document.getElementById('patientSignatureCanvas'),
+      witness: document.getElementById('witnessSignatureCanvas'),
+      therapist: document.getElementById('therapistSignatureCanvas')
+    };
+    const clearButtons = {
+      patient: document.getElementById('clearPatientSignature'),
+      witness: document.getElementById('clearWitnessSignature'),
+      therapist: document.getElementById('clearTherapistSignature')
+    };
+    const contexts = {};
+
+    Object.keys(canvases).forEach(key => {
+      const canvas = canvases[key];
+      if (!canvas) {
+        console.error(`Canvas for ${key} not found!`);
+        return;
+      }
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        console.error(`Failed to get 2D context for ${key} canvas!`);
+        return;
+      }
+      contexts[key] = ctx;
+
+      // Set canvas dimensions
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+
+      // Set drawing properties
+      ctx.strokeStyle = 'black';
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+
+      let isDrawing = false;
+      let lastX = 0;
+      let lastY = 0;
+
+      // Mouse Events
+      canvas.addEventListener('mousedown', (e) => {
+        console.log(`Mouse down on ${key} canvas`);
+        startDrawing(e, key);
+      });
+      canvas.addEventListener('mousemove', (e) => draw(e, key));
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mouseout', stopDrawing);
+
+      // Touch Events
+      canvas.addEventListener('touchstart', (e) => {
+        console.log(`Touch start on ${key} canvas`);
+        e.preventDefault();
+        startDrawing(e.touches[0], key);
+      });
+      canvas.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        draw(e.touches[0], key);
+      });
+      canvas.addEventListener('touchend', stopDrawing);
+
+      function startDrawing(e, canvasKey) {
+        isDrawing = true;
+        const rect = canvases[canvasKey].getBoundingClientRect();
+        lastX = e.clientX - rect.left;
+        lastY = e.clientY - rect.top;
+        contexts[canvasKey].beginPath();
+        contexts[canvasKey].moveTo(lastX, lastY);
+        console.log(`Started drawing on ${canvasKey} at (${lastX}, ${lastY})`);
+      }
+
+      function draw(e, canvasKey) {
+        if (!isDrawing) return;
+        const rect = canvases[canvasKey].getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        contexts[canvasKey].lineTo(x, y);
+        contexts[canvasKey].stroke();
+        lastX = x;
+        lastY = y;
+        console.log(`Drawing on ${canvasKey} to (${x}, ${y})`);
+      }
+
+      function stopDrawing() {
+        isDrawing = false;
+        console.log("Stopped drawing");
+      }
+
+      // Clear Canvas
+      clearButtons[key].addEventListener('click', () => {
+        contexts[key].clearRect(0, 0, canvas.width, canvas.height);
+        console.log(`Cleared ${key} canvas`);
+      });
+    });
+
+    // Update Text Based on Language
+    function updateLanguage(lang) {
+      const t = translations[lang];
+      document.getElementById('formTitle').textContent = t.formTitle;
+      document.getElementById('formHeader').textContent = t.formHeader;
+      document.getElementById('introParagraph').textContent = t.introParagraph;
+      document.getElementById('languageLabel').textContent = t.languageLabel;
+      document.getElementById('nameLabel').textContent = t.nameLabel;
+      document.getElementById('fileNumberLabel').textContent = t.fileNumberLabel;
+      document.getElementById('treatmentsHeader').textContent = t.treatmentsHeader;
+      document.getElementById('treatmentList').innerHTML = t.treatmentList;
+      document.getElementById('notesLabel').textContent = t.notesLabel;
+      document.getElementById('additionalNotes').placeholder = t.notesPlaceholder;
+      document.getElementById('consentCheckboxLabel').innerHTML = `<input type="checkbox" id="consentCheckbox" required class="mr-2">${t.consentCheckboxLabel}`;
+      document.getElementById('patientSignatureLabel').textContent = t.patientSignatureLabel;
+      document.getElementById('witnessSignatureLabel').textContent = t.witnessSignatureLabel;
+      document.getElementById('therapistSignatureLabel').textContent = t.therapistSignatureLabel;
+      document.getElementById('clearPatientSignature').textContent = t.clearPatientSignature;
+      document.getElementById('clearWitnessSignature').textContent = t.clearWitnessSignature;
+      document.getElementById('clearTherapistSignature').textContent = t.clearTherapistSignature;
+      document.getElementById('dateTimeLabel').textContent = t.dateTimeLabel;
+      document.getElementById('submitButton').textContent = t.submitButton;
+      document.getElementById('approvedTreatments').style.direction = t.textDirection;
+      document.getElementById('introduction').style.direction = t.textDirection;
+    }
+
+    // Language Toggle
+    const languageToggle = document.getElementById('languageToggle');
+    languageToggle.addEventListener('change', () => {
+      updateLanguage(languageToggle.value);
+      updateDateTime();
+    });
+
+    // Set Default Language
+    updateLanguage('en');
+
+    // Update Date and Time
+    const dateTimeInput = document.getElementById('signatureDateTime');
+    function updateDateTime() {
+      const now = new Date();
+      const lang = languageToggle.value;
+      if (lang === 'ar') {
+        dateTimeInput.value = now.toLocaleString('ar-EG', { dateStyle: 'short', timeStyle: 'short' });
+      } else if (lang === 'fa') {
+        dateTimeInput.value = now.toLocaleString('fa-IR', { dateStyle: 'short', timeStyle: 'short' });
+      } else {
+        dateTimeInput.value = now.toLocaleString('en-US', { dateStyle: 'short', timeStyle: 'short' });
+      }
+    }
+    updateDateTime();
+
+    // Form Submission
+    document.getElementById('consentForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      console.log("Submit button clicked!");
+      const name = document.getElementById('name').value;
+      const fileNumber = document.getElementById('fileNumber').value;
+      const consentGiven = document.getElementById('consentCheckbox').checked;
+      const additionalNotes = document.getElementById('additionalNotes').value;
+      const signatureDateTime = dateTimeInput.value;
+      const patientSignature = canvases.patient.toDataURL('image/png');
+      const witnessSignature = canvases.witness.toDataURL('image/png');
+      const therapistSignature = canvases.therapist.toDataURL('image/png');
+
+      const data = {
+        name,
+        fileNumber,
+        consentGiven,
+        additionalNotes,
+        signatureDateTime,
+        patientSignature,
+        witnessSignature,
+        therapistSignature,
+        timestamp: new Date().toISOString()
+      };
+
+      console.log("Data prepared to send:", data);
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbzdGzj9aOE_h3mbLcSznCw9YNjNHvLaHrSkwMb_LHeTJFyQVvUZfxsEREzqfErZNhLO/exec';
+      try {
+        console.log("Sending request to:", scriptUrl);
+        const response = await fetch(scriptUrl, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json' }
+        });
+        console.log("Response received:", response);
+        if (response.ok) {
+          alert(translations[languageToggle.value].successMessage);
+          document.getElementById('consentForm').reset();
+          Object.keys(contexts).forEach(key => {
+            contexts[key].clearRect(0, 0, canvases[key].width, canvases[key].height);
+          });
+          updateDateTime();
+        } else {
+          alert(translations[languageToggle.value].errorMessage);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert(translations[languageToggle.value].errorMessage);
+      }
+    });
+  </script>
+</body>
+</html>
